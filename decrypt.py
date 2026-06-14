@@ -8,7 +8,7 @@ from Crypto.Cipher import PKCS1_OAEP, PKCS1_v1_5
 from Crypto.Hash import SHA256, SHA1
 
 BASE_URL = "https://ca-seassessment-api-dev.happywater-190f264d.northcentralus.azurecontainerapps.io"
-API_KEY  = "sa_28fc52219cd15afe6dce59682df2ed62a2477e78b41476b545c84b1766be71ab"  # ← paste your key
+API_KEY  = ""  # ← paste your key
 
 HEADERS  = {"Authorization": f"Bearer {API_KEY}"}
 

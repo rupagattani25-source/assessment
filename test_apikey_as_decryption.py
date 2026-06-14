@@ -10,7 +10,7 @@ from Crypto.Util.Padding import unpad
 # CONFIGURATION
 # ─────────────────────────────────────────────
 BASE_URL = "https://ca-seassessment-api-dev.happywater-190f264d.northcentralus.azurecontainerapps.io"
-API_KEY  = "sa_28fc52219cd15afe6dce59682df2ed62a2477e78b41476b545c84b1766be71ab"   # ← paste your full sa_... key here
+API_KEY  = ""   # ← paste your full sa_... key here
 
 HEADERS  = {"Authorization": f"Bearer {API_KEY}"}
 
