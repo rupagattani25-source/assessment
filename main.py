@@ -6,6 +6,8 @@ import hashlib
 import requests
 from dotenv import load_dotenv
 
+from find_hidden_word import find_layer3_hidden_word
+
 
 load_dotenv()
 
@@ -143,12 +145,6 @@ def check_stats():
     response = get("/api/v1/stats")
     print(json.dumps(response.json(), indent=2))
 
-def inspect_sources():
-    for i in range(0, 500):
-        r = requests.get(f"{BASE_URL}/api/v1/dataset/{i}", headers=HEADERS)
-        if r.status_code == 200:
-            body = r.json()
-            print(i, body.get("source"))
 
 def discover_openapi():
     response = requests.get(f"{BASE_URL}/openapi.json", headers=HEADERS)
@@ -239,7 +235,7 @@ def test_possible_keys(records):
 if __name__ == "__main__":
     #check_stats()
 
-    inspect_sources()
+    find_layer3_hidden_word()
 
     #records = fetch_dataset()
     #test_possible_keys(records)
@@ -248,9 +244,3 @@ if __name__ == "__main__":
     #extra_hashes = compute_additional_hashes(records)
 
     #quick_discover()
-
-    print("\nCompare above hashes with ETag:")
-    print("ea3f703daaaec5ef54af9a9aa9097f176b7c022d9770388d99317be68ce91e16")
-
-    print("\nDo NOT auto-submit blindly.")
-    print("Submit only the hash that matches the ETag or expected content hash.")
